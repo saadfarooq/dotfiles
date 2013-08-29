@@ -1,0 +1,17 @@
+#!/bin/bash
+# The syntax for escaped color sequences looks like:
+#
+#    BLUE="\[\033[0;34m\]"
+#
+# Lets see what we can find...
+
+for COLOR in $(seq 0 255) 
+do
+    for STYLE in "38;5" "48;5"
+    do 
+        TAG="\033[${STYLE};${COLOR}m"
+        STR="${STYLE};${COLOR}"
+        echo -ne "${TAG}${STR}${NONE}  "
+    done
+    echo
+done
