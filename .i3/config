@@ -15,6 +15,11 @@ set $mod Mod4
 exec syndaemon -d -k -t -i 0.5
 exec nm-applet
 exec rescuetime
+exec dropbox start
+exec xfce4-power-manager
+
+# set floats for windows
+for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -29,7 +34,7 @@ bindsym $mod+Return exec lxterminal
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+F2 exec dmenu_run -b -fn 'Inconsolata 10'
+bindsym $mod+d exec dmenu_run -b -fn 'Inconsolata 10'
 
 # change focus
 bindsym $mod+j focus left
@@ -149,7 +154,22 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    output            LVDS1
+    status_command    i3status
+    mode              hide
+    workspace_buttons yes
+
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+    colors {
+        background #000000
+        statusline #ffffff
+
+        focused_workspace  #ffffff #285577
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000
+    }
 }
 
 
@@ -162,6 +182,7 @@ bindsym $mod+Mod1+3 exec ~/.screenlayout/externals-only.sh
 assign [class="thunderbird"] 9: comm
 assign [class="skype"] 9: comm
 assign [class="jetbrains-phpstorm"] 7: ide
+assign [class="jetbrains-android-studio"] 7: ide
 
 # startup script
 exec --no-startup-id i3-msg 'workspace 9: comm; exec skype; workspace 1: web'
