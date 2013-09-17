@@ -113,13 +113,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export ANDROID_HOME=/opt/android-studio/sdk
+export ANDROID_HOME=~/opt/android-studio/sdk
 alias tufts="ssh -Y sfarooq@linux.cs.tufts.edu"
 alias hw="ssh -Y sfarooq@homework.cs.tufts.edu"
 alias rascal='expect sshlogin.exp DbLaoXDr rascal96.local'
 alias ec2='ssh -Y -i ~/.ssh/interlace.pem ubuntu@dev.dfarooq.com'
 PATH="$HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Enable the Git branch on prompt
 function parse_git_branch () {
@@ -177,9 +176,12 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### Source the rvm initialization script ###
 alias rvml='source ~/.rvm/scripts/rvm'
 alias c='pygmentize -g'
+alias pws='pws --length 16 --seconds 0 \
+--filename ~/.config/custom/pws \
+--charpool "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890\!~@#$%"'
 
 ## Enable autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.bash ]] && . ~/.autojump/etc/profile.d/autojump.bash
+[[ -s ~/.config/custom/autojump.bash ]] && . ~/.config/custom/autojump.bash
 
 # Enable Grunt autocompletion
 eval "$(grunt --completion=bash)"

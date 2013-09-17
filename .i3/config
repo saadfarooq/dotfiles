@@ -16,7 +16,7 @@ exec syndaemon -d -k -t -i 0.5
 exec nm-applet
 exec rescuetime
 exec dropbox start
-exec xfce4-power-manager
+exec --no-startup-id xsetroot -solid "#0EAEAE"
 
 # set floats for windows
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
@@ -154,7 +154,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    output            LVDS1
+    output            default
     status_command    i3status
     mode              hide
     workspace_buttons yes
