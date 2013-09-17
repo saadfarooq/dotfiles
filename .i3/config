@@ -17,6 +17,7 @@ exec nm-applet
 exec rescuetime
 exec dropbox start
 exec --no-startup-id xsetroot -solid "#0EAEAE"
+exec xfce4-power-manager
 
 # set floats for windows
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
