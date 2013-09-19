@@ -163,7 +163,7 @@ USER=$MONOKAI_MAROON
 PWD=$MONOKAI_AQUA
 VCS=$MONOKAI_GREEN
  
-PS1="$USER\u@localhost$PWD:\w$VCS\$(parse_git_branch)$NO_COLOUR\$ "
+PS1="$USER\u@\h$PWD:\w$VCS\$(parse_git_branch)$NO_COLOUR\$ "
 
 # PS1="\[\033[31;41;1m\]\333\262\261\260\[\033[37;41;1m\]\u@\h\[\033[0m\033[31;40m\]\333\262\261\260\[\033[37;40;1m\] \d \$(date +%I:%M:%S%P)\n\[\033[31;40;1m\]\w/\[\033[0m\] "
 
