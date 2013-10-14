@@ -185,3 +185,5 @@ alias pws='pws --length 16 --seconds 0 \
 
 # Enable Grunt autocompletion
 eval "$(grunt --completion=bash)"
+
+alias geny="~/opt/genymotion/player --vm-name 56269903-0311-4e3c-859a-9679cd71ddfa"
